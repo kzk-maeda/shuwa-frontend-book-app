@@ -9,7 +9,7 @@ module.exports = {
         publicPath: '/dist'
     },
     resolve: {
-        extensions: ['.js', '.ts', 'tsx']
+        extensions: ['.js', '.ts', '.tsx']
     },
     devServer: {
         contentBase: __dirname,
