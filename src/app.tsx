@@ -1,4 +1,6 @@
 import $ from 'jquery';
+import React from 'react';
+import ReactDOM from 'react-dom';
 import createBookReview from './createBookReview';
 import createBookListItem from './createBookListItem';
 
@@ -20,8 +22,8 @@ export type Review = {
 
 $(function() {
   $.ajax('http://localhost:1323/books')
-    .done(function(books) {
-      books.forEach(createBookListItem)
+    .done(function(books: Book[]) {
+      books.forEach(book => $('#js-book-list').append($(createBookListItem(book))))
 
       $('.js-toggle-review').on('click', function(event) {
         var bookId = $(this).data('bookId')
@@ -54,3 +56,6 @@ $(function() {
       })
     })
 })
+
+const root = document.getElementById('react-root')
+ReactDOM.render(<h1>From React</h1>, root)
