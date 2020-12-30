@@ -1,8 +1,9 @@
+import $ from 'jquery';
 import type { Book } from './app';
 import createBookReview from './createBookReview';
 
 export default function createBookListItem(book: Book) {
-    $('#js-book-list').append($(
+    return(
       '<li class="book-list__item">' +
         '<div class="book-list__item__inner">' +
           '<img class="book-list__item__inner__image" src="' + book.image + '" alt="' + book.title + '">' +
@@ -27,5 +28,5 @@ export default function createBookListItem(book: Book) {
           '</form>' +
         '</div>' +
       '</li>'
-    ))
+    )
 }
